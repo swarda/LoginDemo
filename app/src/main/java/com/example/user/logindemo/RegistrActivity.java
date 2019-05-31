@@ -48,10 +48,9 @@ public class RegistrActivity extends AppCompatActivity {
                     String semail = email.getText().toString();
                     String smobile = mobile.getText().toString();
                     String spass = passw.getText().toString();
-                    EncodePass(spass);
                     validate();
                         db.addUser(sname,semail,smobile,spass);
-                    Toast.makeText(getApplicationContext(),"Resistered Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Resistered Successfully", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -87,8 +86,8 @@ public class RegistrActivity extends AppCompatActivity {
             } else {
                 email.setError(null);
             }
-            if (spass.isEmpty() || spass.length() < 2|| spass.length() > 10) {
-                passw.setError("between 2 and 10 alphanumeric characters");
+            if (spass.isEmpty() || spass.length() < 2|| spass.length() > 7) {
+                passw.setError("between 2 and 7 alphanumeric characters");
                 valid = false;
             } else {
                 passw.setError(null);
@@ -108,25 +107,6 @@ public class RegistrActivity extends AppCompatActivity {
         Matcher matcher = pattern.matcher(semail);
         return matcher.matches();
     }
-    private String EncodePass(String pass) {
-        String password = null;
-        MessageDigest mdEnc;
-        try {
-            mdEnc = MessageDigest.getInstance("MD5");
-            mdEnc.update(pass.getBytes(), 0, pass.length());
-            pass = new BigInteger(1, mdEnc.digest()).toString(16);
-            while (pass.length() < 32) {
-                pass = "0" + pass;
-            }
-            password = pass;
-            Toast.makeText(getApplicationContext(), password, Toast.LENGTH_LONG).show();
-            passw.setText(pass);
 
-        } catch (NoSuchAlgorithmException e1) {
-            e1.printStackTrace();
-        }
-        return password;
-
-    }
 
 }

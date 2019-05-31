@@ -50,8 +50,11 @@ public class Home extends AppCompatActivity {
                 }
                 Toast.makeText(getApplicationContext(),outputString,Toast.LENGTH_SHORT).show();
                     t1.setText(outputString);
+
+
             }
         });
+
         logout=(Button)findViewById(R.id.btnLogout);
         prf = getSharedPreferences("details",MODE_PRIVATE);
         intent = new Intent(Home.this,MainActivity.class);
