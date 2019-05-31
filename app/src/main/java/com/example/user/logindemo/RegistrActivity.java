@@ -50,7 +50,7 @@ public class RegistrActivity extends AppCompatActivity {
                     String spass = passw.getText().toString();
                     validate();
                         db.addUser(sname,semail,smobile,spass);
-                    Toast.makeText(getApplicationContext(),"Resistered Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Registered Successfully", Toast.LENGTH_SHORT).show();
 
                     }
                 }
