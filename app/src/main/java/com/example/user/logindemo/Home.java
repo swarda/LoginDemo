@@ -51,7 +51,7 @@ public class Home extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),outputString,Toast.LENGTH_SHORT).show();
                     t1.setText(outputString);
 
-
+                     t1.setText("");
             }
         });
 

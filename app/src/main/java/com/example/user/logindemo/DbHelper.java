@@ -148,6 +148,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public boolean getUser(String email,String pass){
         //HashMap<String, String> user = new HashMap<String, String>();
+        pass=md5(pass);
         String selectQuery = "select * from  " + USER_TABLE + " where " +
                 COLUMN_EMAIL + " = " + "'"+email+"'"  + " and " + COLUMN_PASS + " = " + "'"+pass+"'";
 
